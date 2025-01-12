@@ -45,24 +45,24 @@ class MyArray {
     }
 
     /// O(n)
-    // unshift(item) {
-    //     for (let i = 0; i <= this.length - 1; i++) {
-    //         if (this.length <= 1) {
-    //             this.data[i + 1] = this.data[i]
-    //         } else {
-    //             this.data[i] = this.data[i + 1];
-    //         }
-    //     }
-    //     this.data[0] = item;
-    //     this.length++
-    //     return this.data
-    // }
+    unshift(item) {
+        if (this.length > 0) {
+            for (let i = this.length - 1; i >= 0; i--) {
+                this.data[i + 1] = this.data[i];
+            }
+        }
+        this.data[0] = item;
+        this.length++;
+        return this.data;
+    }
 }
 
 const array = new MyArray();
-array.push(1);
 array.push(3);
 // array.get(0)
-array.unshift(5)
+array.unshift(1)
+array.unshift(2)
+// array.unshift(4)
+
 // array.pop()
-console.log(array.data);
+console.log(array.length);
