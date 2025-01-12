@@ -46,7 +46,6 @@ class MyArray {
 
     /// O(n)
     unshift(item) {
-        this.data[0] = item;
         for (let i = 0; i <= this.length - 1; i++) {
             if (this.length <= 1) {
                 this.data[i + 1] = this.data[i]
@@ -54,6 +53,7 @@ class MyArray {
                 this.data[i] = this.data[i + 1];
             }
         }
+        this.data[0] = item;
         this.length++
         return this.data
     }
@@ -61,7 +61,7 @@ class MyArray {
 
 const array = new MyArray();
 // array.pop()
-// array.push(1);
+array.push(1);
 // array.get(0)
 array.unshift(5)
 console.log(array);
